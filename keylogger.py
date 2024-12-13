@@ -1,7 +1,6 @@
 from pynput import keyboard
 
 def keypressed(key):
-    print("Key pressed: ")
     print(str(key))
     if str(key) == "Key.esc":
         return exit()
